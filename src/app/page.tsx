@@ -34,10 +34,10 @@ export default function HomePage() {
   const copy = t[lang];
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4 py-8">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#dff9fb] to-white px-4 py-8">
       <div className="w-full max-w-sm">
         {/* Card */}
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div className="rounded-2xl bg-transparent p-6">
           {/* Language toggle */}
 
           {         /* Title */}
@@ -52,8 +52,8 @@ export default function HomePage() {
             <button
               onClick={() => setLang("id")}
               className={`rounded-md px-5 py-1.5 text-sm font-semibold transition-colors ${lang === "id"
-                  ? "bg-accent text-white"
-                  : "border border-gray-300 bg-white text-gray-700"
+                ? "bg-accent text-white"
+                : "border border-gray-300 bg-white text-gray-700"
                 }`}
             >
               Indonesian
@@ -61,8 +61,8 @@ export default function HomePage() {
             <button
               onClick={() => setLang("en")}
               className={`rounded-md px-5 py-1.5 text-sm font-semibold transition-colors ${lang === "en"
-                  ? "bg-accent text-white"
-                  : "border border-gray-300 bg-white text-gray-700"
+                ? "bg-accent text-white"
+                : "border border-gray-300 bg-white text-gray-700"
                 }`}
             >
               English

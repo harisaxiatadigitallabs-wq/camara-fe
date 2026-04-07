@@ -71,7 +71,7 @@ export default function ConsentPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#dff9fb] to-white">
       {/* Top bar */}
       <div className="flex items-center px-4 py-4 border-b border-gray-100">
         <button
@@ -86,14 +86,15 @@ export default function ConsentPage() {
         </h1>
       </div>
 
+      {/* Description */}
+      <p className="mb-4 text-sm text-gray-700 leading-relaxed px-4 py-4">
+        {copy.description(APP_NAME)}
+        <span className="font-bold">[{APP_NAME}]</span>
+        {copy.descriptionSuffix}
+      </p>
+
       {/* Scrollable content */}
-      <div className="flex-1 overflow-y-auto consent-scroll px-4 py-4">
-        {/* Description */}
-        <p className="mb-4 text-sm text-gray-700 leading-relaxed">
-          {copy.description(APP_NAME)}
-          <span className="font-bold">[{APP_NAME}]</span>
-          {copy.descriptionSuffix}
-        </p>
+      <div className="flex-1 overflow-y-auto consent-scroll px-4 py-4 bg-white mx-4">
 
         {/* Section 1 */}
         <div className="mb-4">
@@ -166,11 +167,10 @@ export default function ConsentPage() {
           <button
             onClick={handleAllow}
             disabled={!acknowledged}
-            className={`flex-1 rounded-lg py-2.5 text-sm font-semibold text-white transition-colors ${
-              acknowledged
-                ? "bg-primary hover:bg-primary-hover active:scale-[0.98]"
-                : "bg-gray-300 cursor-not-allowed"
-            }`}
+            className={`flex-1 rounded-lg py-2.5 text-sm font-semibold text-white transition-colors ${acknowledged
+              ? "bg-primary hover:bg-primary-hover active:scale-[0.98]"
+              : "bg-gray-300 cursor-not-allowed"
+              }`}
           >
             {copy.allowBtn}
           </button>
